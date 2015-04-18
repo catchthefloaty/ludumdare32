@@ -41,9 +41,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deg: 0
-  speed: 10
-  speedexp: 1.00999999
-  Freq: 3
+  speed: 3
+  speedexp: 1.04999995
+  Freq: 200
   degOffset: 0
 --- !u!212 &21272828
 SpriteRenderer:

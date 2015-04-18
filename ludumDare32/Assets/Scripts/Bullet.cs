@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	transform.position += new Vector3(speed * Mathf.Sin(deg+degOffset)* Time.deltaTime,speed  * Mathf.Cos(deg+degOffset)*Time.deltaTime,0);
-    
-    speed = Mathf.Pow(speed,speedexp);
+	transform.position += new Vector3(speed * Mathf.Sin((deg+degOffset)*Mathf.Deg2Rad)* Time.deltaTime,speed  * Mathf.Cos((deg+degOffset)*Mathf.Deg2Rad)*Time.deltaTime,0);
+
+    speed = speed + (Time.deltaTime * (Mathf.Pow(speed, speedexp) - speed));
     
     if (right == true){
         degOffset += Freq * Time.deltaTime;
