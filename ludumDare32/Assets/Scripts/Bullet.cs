@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	transform.position = new Vector3(speed * Time.deltaTime * Mathf.Sin(deg+degOffset),speed * Time.deltaTime * Mathf.Sin(deg+degOffset),0);
+	transform.position += new Vector3(speed * Mathf.Sin(deg+degOffset),speed  * Mathf.Cos(deg+degOffset),0);
     
     speed = Mathf.Pow(speed,speedexp);
     
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour {
         }
     }
     else if (right == false){
-        degOffset -= 3;
+        degOffset -= Freq;
         if(degOffset <= -60){
             right = true;
         }
