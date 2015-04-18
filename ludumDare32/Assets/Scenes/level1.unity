@@ -202,15 +202,15 @@ MonoBehaviour:
   IdleAnimations:
   - {fileID: 21300000, guid: 591b57b44e0c254488523efb5561f4dd, type: 3}
   - {fileID: 21300002, guid: 591b57b44e0c254488523efb5561f4dd, type: 3}
-  - {fileID: 21300004, guid: 591b57b44e0c254488523efb5561f4dd, type: 3}
   IdleTimings:
-  - 1.20000005
-  - .800000012
-  - 1.29999995
+  - 3.5
+  - .0799999982
   IdleTimingOffsets:
+  - 1
   - 0
-  - 0
-  - 0
+  WalkAnimations: []
+  WalkTimings: []
+  moveSpeed: 3
 --- !u!4 &1017999983
 Transform:
   m_ObjectHideFlags: 0
