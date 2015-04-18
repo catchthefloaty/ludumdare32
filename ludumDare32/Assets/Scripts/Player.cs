@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
 
         float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
         tempBullet.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-        b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z -360);
+        b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z);
         Debug.Log(Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360));
         
     }

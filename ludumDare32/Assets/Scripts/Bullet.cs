@@ -15,22 +15,27 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	transform.position += new Vector3(speed * Mathf.Sin(deg+degOffset),speed  * Mathf.Cos(deg+degOffset),0);
+
+	transform.position += new Vector3(speed * Mathf.Sin(deg+degOffset)* Time.deltaTime,speed  * Mathf.Cos(deg+degOffset)*Time.deltaTime,0);
     
     speed = Mathf.Pow(speed,speedexp);
     
     if (right == true){
-        degOffset += Freq;
+        degOffset += Freq * Time.deltaTime;
         if (degOffset >= 60){
             right = false;
         }
     }
     else if (right == false){
-        degOffset -= Freq;
+        degOffset -= Freq*Time.deltaTime;
         if(degOffset <= -60){
             right = true;
         }
     }
     
 	}
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
