@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     SpriteRenderer texture;
     public Sprite[] IdleAnimations;
     public float[] IdleTimings;
+    public float[] IdleTimingOffsets;
     float AnimTime;
     //public float AnimRate = 3;
     int AnimState;
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour {
         if (AnimState == 0)
         {
             AnimTime += Time.deltaTime;
-            if (AnimTime > IdleTimings[curFrame])
+            if (AnimTime > IdleTimings[curFrame] + Random.Range(0f,IdleTimings[curFrame]) )
             {
                 AnimTime = 0;
                 curFrame++;

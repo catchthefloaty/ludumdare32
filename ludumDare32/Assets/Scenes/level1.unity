@@ -207,6 +207,10 @@ MonoBehaviour:
   - 1.20000005
   - .800000012
   - 1.29999995
+  IdleTimingOffsets:
+  - 0
+  - 0
+  - 0
 --- !u!4 &1017999983
 Transform:
   m_ObjectHideFlags: 0
