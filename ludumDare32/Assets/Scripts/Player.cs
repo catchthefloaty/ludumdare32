@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public float[] WalkTimings;
     float AnimTime;
     int GameplayState = 1;
-    Rigidbody2D rb;
     public float moveSpeed = 3;
 
     int AnimState;
@@ -27,7 +26,6 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         texture = GetComponent<SpriteRenderer>();
         target = new GameObject();
     }
@@ -78,7 +76,7 @@ public class Player : MonoBehaviour
                 v = -1;
             }
             transform.Translate(h * Time.deltaTime * moveSpeed, v * Time.deltaTime * moveSpeed, 0);
-            //rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*Time.deltaTime * moveSpeed,Input.GetAxis("Vertical")* Time.deltaTime*moveSpeed));
+            
 
 
             if (v == 0 && h == 0)
@@ -89,6 +87,13 @@ public class Player : MonoBehaviour
                 texture.sprite = IdleAnimations[curFrame];
                 AnimTime = 0;
             }
+            if (Input.GetMouseButtonDown(0) == true)
+            {
+                GameplayState = 2;
+                mouseclick = Input.mousePosition;
+
+            }
+
         }
         else if (GameplayState == 2)
         {
@@ -139,14 +144,12 @@ public class Player : MonoBehaviour
 
         cPoint.z = 0;
         target.transform.position = cPoint;
-        //target.transform.RotateAround(transform.position, Vector3.forward,);
-        //b.direction = Vector3.Normalize(target.transform.position - this.transform.position);
         Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
 
         float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
         tempBullet.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360);
-        //Debug.Log(Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360));
+        
         
     }
 }

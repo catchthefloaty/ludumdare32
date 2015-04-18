@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
     {
         
         texture = GetComponent<SpriteRenderer>();
+        fireTime = fireRate + 1;
         
     }
 
