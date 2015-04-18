@@ -5,8 +5,9 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
     SpriteRenderer texture;
     public Sprite[] IdleAnimations;
+    public float[] IdleTimings;
     float AnimTime;
-    public float AnimRate = 3;
+    //public float AnimRate = 3;
     int AnimState;
     int curFrame;
 	// Use this for initialization
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour {
         if (AnimState == 0)
         {
             AnimTime += Time.deltaTime;
-            if (AnimTime > AnimRate)
+            if (AnimTime > IdleTimings[curFrame])
             {
                 AnimTime = 0;
                 curFrame++;
