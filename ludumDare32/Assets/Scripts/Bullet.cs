@@ -8,32 +8,42 @@ public class Bullet : MonoBehaviour {
     bool right;
     public float Freq;
     public float degOffset;
+    Vector3 origPos;
+    Vector3 OffsetPos;
+    float MasterTimer;
+    public float breakAngle;
 	// Use this for initialization
 	void Start () {
-	
+        origPos = transform.position;
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
 
-	transform.position += new Vector3(speed * Mathf.Sin((deg+degOffset)*Mathf.Deg2Rad)* Time.deltaTime,speed  * Mathf.Cos((deg+degOffset)*Mathf.Deg2Rad)*Time.deltaTime,0);
+        OffsetPos += new Vector3(speed * Mathf.Sin((deg + degOffset) * Mathf.Deg2Rad), speed * Mathf.Cos((deg + degOffset) * Mathf.Deg2Rad), 0);
+        transform.position = origPos + OffsetPos;
+        speed += Mathf.Pow(speed, speedexp) * Time.deltaTime * Time.deltaTime;
 
-    speed = speed + (Time.deltaTime * (Mathf.Pow(speed, speedexp) - speed));
-    
-    if (right == true){
-        degOffset += Freq * Time.deltaTime;
-        if (degOffset >= 60){
-            right = false;
+        if (right == true)
+        {
+            degOffset += (Freq * Time.deltaTime);
+            if (degOffset >= breakAngle)
+            {
+                right = false;
+            }
+        }
+        else if (right == false)
+        {
+            degOffset -= (Freq * Time.deltaTime);
+            if (degOffset <= -breakAngle)
+            {
+                right = true;
+            }
         }
     }
-    else if (right == false){
-        degOffset -= Freq*Time.deltaTime;
-        if(degOffset <= -60){
-            right = true;
-        }
-    }
     
-	}
     void OnBecameInvisible()
     {
         Destroy(gameObject);
