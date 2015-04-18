@@ -211,7 +211,7 @@ MonoBehaviour:
   WalkAnimations: []
   WalkTimings: []
   moveSpeed: 3
-  bullet1: {fileID: 0}
+  bullet1: {fileID: 153408, guid: 5c56c94000459304b8e96de328a95f71, type: 2}
   fireRate: 0
 --- !u!4 &1017999983
 Transform:

@@ -129,7 +129,8 @@ public class Player : MonoBehaviour
     }
     void FireBullet1(Vector3 targetvector)
     {
-        
+        GameObject tempBullet = (GameObject)GameObject.Instantiate(bullet1,transform.position,Quaternion.identity);
+        Bullet b = tempBullet.GetComponent<Bullet>();
         Ray ray = Camera.main.ScreenPointToRay(targetvector);
         Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, 0));
         float distance;
@@ -138,12 +139,13 @@ public class Player : MonoBehaviour
 
         cPoint.z = 0;
         target.transform.position = cPoint;
-        //target.transform.RotateAround(transform.position, Vector3.forward, bullet[0] + Random.Range(-bullet[1], bullet[1]));
+        //target.transform.RotateAround(transform.position, Vector3.forward,);
         //b.direction = Vector3.Normalize(target.transform.position - this.transform.position);
         Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
 
         float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
         //temp.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z );
         Debug.Log(Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360));
         
     }
