@@ -29,7 +29,14 @@ public class Player : MonoBehaviour {
     //Gameplay stuff
         if (GameplayState == 0)
         {
-            
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical")) > 0)
+            {
+                GameplayState = 1;
+                AnimState = 1;
+                curFrame = 0;
+                texture.sprite = WalkAnimations[curFrame];
+                AnimTime = 0;
+            }
         }
         else if (GameplayState == 1)
         {
@@ -52,7 +59,16 @@ public class Player : MonoBehaviour {
             }
             transform.Translate(h * Time.deltaTime * moveSpeed, v * Time.deltaTime * moveSpeed,0);
             //rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*Time.deltaTime * moveSpeed,Input.GetAxis("Vertical")* Time.deltaTime*moveSpeed));
-            
+
+
+            if (v == 0 && h == 0)
+            {
+                GameplayState = 0;
+                AnimState = 0;
+                curFrame = 0;
+                texture.sprite = IdleAnimations[curFrame];
+                AnimTime = 0;
+            }
         }
 
 

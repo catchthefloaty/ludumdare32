@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 591b57b44e0c254488523efb5561f4dd
-timeCreated: 1429332893
+timeCreated: 1429339611
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: rock_0
     21300002: rock_1
     21300004: rock_2
+    21300006: rock_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -79,6 +80,16 @@ TextureImporter:
         y: 8
         width: 79
         height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 139
+        height: 98
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
