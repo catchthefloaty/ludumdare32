@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     int curFrame;
     int h;
     int v;
-
+    GameObject target;
     Vector3 mouseclick;
     public GameObject bullet1;
     float fireTime;
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         texture = GetComponent<SpriteRenderer>();
+        target = new GameObject();
     }
 
     // Update is called once per frame
@@ -52,7 +53,9 @@ public class Player : MonoBehaviour
             {
                 GameplayState = 2;
                 mouseclick = Input.mousePosition;
+                
             }
+        
         }
         else if (GameplayState == 1)
         {
@@ -124,12 +127,25 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void FireBullet1(Vector3 target)
+    void FireBullet1(Vector3 targetvector)
     {
-        Vector3 degVector = (target - transform.position).normalized;
-        float deg = Vector3.Angle(transform.position,target);
         
-        Debug.Log(deg);
+        Ray ray = Camera.main.ScreenPointToRay(targetvector);
+        Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, 0));
+        float distance;
+        xy.Raycast(ray, out distance);
+        Vector3 cPoint = ray.GetPoint(distance);
+
+        cPoint.z = 0;
+        target.transform.position = cPoint;
+        //target.transform.RotateAround(transform.position, Vector3.forward, bullet[0] + Random.Range(-bullet[1], bullet[1]));
+        //b.direction = Vector3.Normalize(target.transform.position - this.transform.position);
+        Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
+
+        float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
+        //temp.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        Debug.Log(rot_z+90);
+        
     }
 }
 
