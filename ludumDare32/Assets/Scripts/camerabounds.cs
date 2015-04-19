@@ -20,11 +20,11 @@ public class camerabounds : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatex1 = 1;
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatey1 = 1;
             }
         }
     }
@@ -35,11 +35,11 @@ public class camerabounds : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatex1 = 0;
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatey1 = 0;
             }
         }
     }
@@ -50,11 +50,11 @@ public class camerabounds : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatex1 = 1;
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatey1 = 1;
             }
         }
     }

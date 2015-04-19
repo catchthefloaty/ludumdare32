@@ -21,23 +21,23 @@ public class camerawalls : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatex2 = 0;
                 foreach (GameObject g in bounds)
                 {
                     if (g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(false);
+                        //g.SetActive(false);
                     }
                 }
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatey2 = 0;
                 foreach (GameObject g in bounds)
                 {
                     if (!g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(false);
+                        //g.SetActive(false);
                     }
                 }
             }
@@ -50,23 +50,23 @@ public class camerawalls : MonoBehaviour {
         {
             if (vertical)
             {
-                //Camera.main.GetComponent<CameraFollow>().followStatex = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatex2 = 1;
                 foreach (GameObject g in bounds)
                 {
                     if (g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(true);
+                        //g.SetActive(true);
                     }
                 }
             }
             else
             {
-                //Camera.main.GetComponent<CameraFollow>().followStatey = 1;
+                Camera.main.GetComponent<CameraFollow>().followStatey2 = 1;
                 foreach (GameObject g in bounds)
                 {
                     if (!g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(true);
+                        //g.SetActive(true);
                     }
                 }
             }
@@ -79,23 +79,23 @@ public class camerawalls : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatex2 = 0;
                 foreach (GameObject g in bounds)
                 {
                     if (g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(false);
+                        //g.SetActive(false);
                     }
                 }
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 0;
+                Camera.main.GetComponent<CameraFollow>().followStatey2 = 0;
                 foreach (GameObject g in bounds)
                 {
                     if (!g.GetComponent<camerabounds>().vertical)
                     {
-                        g.SetActive(false);
+                        //g.SetActive(false);
                     }
                 }
             }
