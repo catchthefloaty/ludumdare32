@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class Enemy : MonoBehaviour
     public float AttackTurnLimit;
     float AnimTime;
     public int GameplayState = 0;
-    
+    List<Vector3> pattern = new List<Vector3>();
+    int patterncount;
     public float moveSpeed = 3;
 
     public int AnimState;
@@ -37,7 +39,12 @@ public class Enemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        //right
+        pattern.Add(new Vector3(1,0,0));
+        //up
+        pattern.Add(new Vector3(0, 1, 0));
+        //attack
+        pattern.Add(new Vector3(2, 0, 0));
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
         
@@ -71,7 +78,18 @@ public class Enemy : MonoBehaviour
                    curFrame = 0;
                    texture.sprite = WalkAnimations[curFrame];
                    AnimTime = 0;
-                   direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f),0);
+                   direction = pattern[patterncount];
+                   patterncount++;
+                   if (direction.x == 2)
+                   {
+                       GameplayState = 2;
+                       AnimState = 2;
+                       texture.sprite = AttackAnimations[curFrame];
+                   }
+                   if (patterncount >= pattern.Count)
+                   {
+                       patterncount = 0;
+                   }
                }
                
                IdleTime = 0;
@@ -135,7 +153,18 @@ public class Enemy : MonoBehaviour
                     curFrame = 0;
                     texture.sprite = WalkAnimations[curFrame];
                     AnimTime = 0;
-                    direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+                    direction = pattern[patterncount];
+                    patterncount++;
+                    if (direction.x == 2)
+                    {
+                        GameplayState = 2;
+                        AnimState = 2;
+                        texture.sprite = AttackAnimations[curFrame];
+                    }
+                    if (patterncount >= pattern.Count)
+                    {
+                        patterncount = 0;
+                    }
                 }
                 else if (select > 3)
                 {
