@@ -14,10 +14,10 @@ public class camerawalls : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
+    /*void OnTriggerEnter2D(Collider2D col)
     {
         
-        if (col.tag == "Player")
+        if (col.tag == "MainCamera")
         {
             if (vertical)
             {
@@ -46,7 +46,7 @@ public class camerawalls : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col)
     {
 
-        if (col.tag == "Player")
+        if (col.tag == "MainCamera")
         {
             if (vertical)
             {
@@ -72,10 +72,10 @@ public class camerawalls : MonoBehaviour {
             }
         }
     }
-    void OnTriggerStay2D(Collider2D col)
+    /*void OnTriggerStay2D(Collider2D col)
     {
 
-        if (col.tag == "Player")
+        if (col.tag == "MainCamera")
         {
             if (vertical)
             {
@@ -100,6 +100,6 @@ public class camerawalls : MonoBehaviour {
                 }
             }
         }
-    }
+    }*/
     
 }
