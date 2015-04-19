@@ -147,6 +147,21 @@ public class Player : MonoBehaviour
                 }
                 texture.sprite = WalkAnimations[curFrame];
             }
+
+            else if (AnimState == 2)
+            {
+                AnimTime += Time.deltaTime;
+                if (AnimTime > AttackTimings[curFrame])
+                {
+                    AnimTime = 0;
+                    curFrame++;
+                    if (curFrame >= AttackAnimations.GetLength(0))
+                    {
+                        curFrame = 0;
+                    }
+                    texture.sprite = AttackAnimations[curFrame];
+                }
+            }
         }
 
         else if (AnimState == 2)
