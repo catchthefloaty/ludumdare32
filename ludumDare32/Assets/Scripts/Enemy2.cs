@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Enemy : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
 
     SpriteRenderer texture;
@@ -13,10 +13,6 @@ public class Enemy : MonoBehaviour
     public float[] WalkTimings;
     public Sprite[] AttackAnimations;
     public float[] AttackTimings;
-    public Sprite[] SleepAnimations;
-    public float[] SleepTimes;
-    float sleepTimer;
-    public float SleepLimit;
     public Sprite[] bullets;
     float IdleTime;
     public float IdleTurnLimit;
@@ -29,7 +25,10 @@ public class Enemy : MonoBehaviour
     List<Vector3> pattern = new List<Vector3>();
     int patterncount;
     public float moveSpeed = 3;
-
+    public Sprite[] SleepAnimations;
+    public float[] SleepTimes;
+    float sleepTimer;
+    public float SleepLimit;
     public int AnimState;
     int curFrame;
     Vector3 direction;
@@ -44,6 +43,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //right
+        //use an x value of 2, 4-11
         pattern.Add(new Vector3(3, 0, 0));
         pattern.Add(new Vector3(1,0,0));
         pattern.Add(new Vector3(2, 0, 0));
@@ -90,13 +90,14 @@ public class Enemy : MonoBehaviour
                    AnimTime = 0;
                    direction = pattern[patterncount];
                    patterncount++;
-                   if (direction.x == 2)
+                   if (direction.x == 2 || direction.x >= 4)
                    {
                        GameplayState = 2;
                        AnimState = 2;
                        texture.sprite = AttackAnimations[curFrame];
                        fireTime = fireRate + 1;
                    }
+
                    if (direction.x == 3)
                    {
                        GameplayState = 0;
@@ -116,7 +117,7 @@ public class Enemy : MonoBehaviour
                    AnimTime = 0;
                    direction = pattern[patterncount];
                    patterncount++;
-                   if (direction.x == 2)
+                   if (direction.x == 2 || direction.x >= 4)
                    {
                        GameplayState = 2;
                        AnimState = 2;
@@ -171,7 +172,7 @@ public class Enemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -205,7 +206,38 @@ public class Enemy : MonoBehaviour
             fireTime += Time.deltaTime;
             if (fireTime > fireRate)
             {
-                Attack();
+                if (direction.x == 2)
+                {
+                    Attack();
+                }
+                else if (direction.x == 4) {
+                    Attack2();
+                }
+                else if (direction.x == 5)
+                {
+                    Attack3();
+                }
+                else if (direction.x == 6)
+                {
+                    Attack4();
+                }
+                else if (direction.x == 7)
+                {
+                    Attack5();
+                }
+                else if (direction.x == 8)
+                {
+                    Attack6();
+                }
+                else if (direction.x == 9)
+                {
+                    Attack7();
+                }
+                else if (direction.x == 9)
+                {
+                    Attack8();
+                }
+                
                 fireTime = 0;
             }
             AttackTime += Time.deltaTime;
@@ -222,7 +254,7 @@ public class Enemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -251,7 +283,7 @@ public class Enemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -273,7 +305,7 @@ public class Enemy : MonoBehaviour
                 AttackTime = 0;
             }
         }
-        
+
 
         //animation stuffwd
         if (AnimState == 0)
@@ -319,7 +351,8 @@ public class Enemy : MonoBehaviour
                 texture.sprite = AttackAnimations[curFrame];
             }
         }
-        else if (AnimState == 3){
+        else if (AnimState == 3)
+        {
             AnimTime += Time.deltaTime;
             if (AnimTime > SleepTimes[curFrame])
             {
@@ -333,7 +366,8 @@ public class Enemy : MonoBehaviour
                 texture.sprite = SleepAnimations[curFrame];
             }
             sleepTimer += Time.deltaTime;
-            if (sleepTimer>SleepLimit){
+            if (sleepTimer > SleepLimit)
+            {
                 sleepTimer = 0;
                 texture.enabled = !texture.enabled;
 
@@ -344,9 +378,9 @@ public class Enemy : MonoBehaviour
     void Attack()
     {
         GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f,0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0,bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(),Bullet.GetComponent<BoxCollider2D>(),true);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
@@ -360,4 +394,33 @@ public class Enemy : MonoBehaviour
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
+    void Attack2()
+    {
+        
+    }
+    void Attack3()
+    {
+
+    }
+    void Attack4()
+    {
+
+    }
+    void Attack5()
+    {
+
+    }
+    void Attack6()
+    {
+
+    }
+    void Attack7()
+    {
+
+    }
+    void Attack8()
+    {
+
+    }
+    
 }

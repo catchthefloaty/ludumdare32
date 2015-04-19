@@ -19,8 +19,8 @@ TagManager:
   - camera
   - player
   - cameraBounds
-  - 
-  - 
+  - bullets
+  - walls
   - 
   - 
   - 
