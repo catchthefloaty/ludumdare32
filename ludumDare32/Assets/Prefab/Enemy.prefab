@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 438540}
   - 212: {fileID: 21261940}
   - 114: {fileID: 11411278}
+  - 50: {fileID: 5012228}
+  - 61: {fileID: 6132124}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -57,6 +59,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 438540}
   m_RootOrder: 0
+--- !u!50 &5012228
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121502}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &6132124
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121502}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 1.03499997}
+  serializedVersion: 2
+  m_Size: {x: 1.19000006, y: 2.06999993}
 --- !u!114 &11411278
 MonoBehaviour:
   m_ObjectHideFlags: 1
