@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6132124}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdleAnimations:
-  - {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300004, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300002, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300004, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
+  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300004, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
   IdleTimings:
   - .5
   - .100000001
@@ -114,19 +114,22 @@ MonoBehaviour:
   - 0
   - 0
   WalkAnimations:
-  - {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300008, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
-  - {fileID: 21300010, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
+  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300006, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300008, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
   WalkTimings:
   - .100000001
   - .100000001
   - .100000001
   - .100000001
   AttackAnimations:
-  - {fileID: 21300000, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
+  - {fileID: 21300010, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
   AttackTimings:
   - 0
+  SleepAnimations: []
+  SleepTimes: []
+  SleepLimit: 0
   bullets:
   - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
   - {fileID: 21300002, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
@@ -166,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

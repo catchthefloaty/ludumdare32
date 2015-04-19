@@ -27,11 +27,11 @@ public class Enemy : MonoBehaviour
     float AnimTime;
     public int GameplayState = 0;
     List<Vector3> pattern = new List<Vector3>();
-    int patterncount;
+    public int patterncount;
     public float moveSpeed = 3;
 
     public int AnimState;
-    int curFrame;
+    public int curFrame;
     Vector3 direction;
     
     

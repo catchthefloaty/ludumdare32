@@ -13,11 +13,13 @@ public class Player : MonoBehaviour
     float AnimTime;
     int GameplayState = 1;
     public float moveSpeed = 3;
-
+    public GameObject[] Hearts;
     int AnimState;
     int curFrame;
     int h;
     int v;
+    public int health = 4;
+    public GameObject gameover;
     GameObject target;
     Vector3 mouseclick;
     public GameObject bullet1;
@@ -33,8 +35,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        if (health < 4)
+        {
+            for(int i = health; i < 4; i++){
+                Hearts[i].SetActive(false);
+            }
+            if (health < 1)
+            {
+                gameover.SetActive(true);
+                Destroy(gameObject);
+            }
+        }
         //Gameplay stuff
         fireTime += Time.deltaTime;
         if (GameplayState == 0)

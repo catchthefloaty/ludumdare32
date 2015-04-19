@@ -23,14 +23,14 @@ public class Enemy2 : MonoBehaviour
     float AnimTime;
     public int GameplayState = 0;
     List<Vector3> pattern = new List<Vector3>();
-    int patterncount;
+    public int patterncount;
     public float moveSpeed = 3;
     public Sprite[] SleepAnimations;
     public float[] SleepTimes;
     float sleepTimer;
     public float SleepLimit;
     public int AnimState;
-    int curFrame;
+    public int curFrame;
     Vector3 direction;
     
     

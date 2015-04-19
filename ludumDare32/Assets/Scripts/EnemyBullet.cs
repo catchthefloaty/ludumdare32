@@ -19,4 +19,13 @@ public class EnemyBullet : MonoBehaviour {
         }
         transform.Translate(new Vector3(speed * Time.deltaTime * direction.x, speed * Time.deltaTime * direction.y,0));
 	}
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.tag == "Player")
+        {
+            col.gameObject.GetComponent<Player>().health -= 1;
+
+        }
+        Destroy(gameObject);
+    }
 }
