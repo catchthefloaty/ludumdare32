@@ -41,11 +41,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deg: 0
-  speed: .0500000007
-  speedexp: 15
+  speed: 5
+  speedexp: 1.005
   Freq: 200
   degOffset: 0
-  breakAngle: 75
+  breakAngle: 60
 --- !u!212 &21272828
 SpriteRenderer:
   m_ObjectHideFlags: 1
