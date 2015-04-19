@@ -3,6 +3,7 @@ using System.Collections;
 
 public class camerawalls : MonoBehaviour {
     public bool vertical;
+    public GameObject[] bounds;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,10 +22,24 @@ public class camerawalls : MonoBehaviour {
             if (vertical)
             {
                 Camera.main.GetComponent<CameraFollow>().followStatex = 0;
+                foreach (GameObject g in bounds)
+                {
+                    if (g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(false);
+                    }
+                }
             }
             else
             {
                 Camera.main.GetComponent<CameraFollow>().followStatey = 0;
+                foreach (GameObject g in bounds)
+                {
+                    if (!g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(false);
+                    }
+                }
             }
         }
     }
@@ -35,11 +50,25 @@ public class camerawalls : MonoBehaviour {
         {
             if (vertical)
             {
-                Camera.main.GetComponent<CameraFollow>().followStatex = 1;
+                //Camera.main.GetComponent<CameraFollow>().followStatex = 1;
+                foreach (GameObject g in bounds)
+                {
+                    if (g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(true);
+                    }
+                }
             }
             else
             {
-                Camera.main.GetComponent<CameraFollow>().followStatey = 1;
+                //Camera.main.GetComponent<CameraFollow>().followStatey = 1;
+                foreach (GameObject g in bounds)
+                {
+                    if (!g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(true);
+                    }
+                }
             }
         }
     }
@@ -51,10 +80,24 @@ public class camerawalls : MonoBehaviour {
             if (vertical)
             {
                 Camera.main.GetComponent<CameraFollow>().followStatex = 0;
+                foreach (GameObject g in bounds)
+                {
+                    if (g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(false);
+                    }
+                }
             }
             else
             {
                 Camera.main.GetComponent<CameraFollow>().followStatey = 0;
+                foreach (GameObject g in bounds)
+                {
+                    if (!g.GetComponent<camerabounds>().vertical)
+                    {
+                        g.SetActive(false);
+                    }
+                }
             }
         }
     }
