@@ -41,10 +41,14 @@ public class Enemy : MonoBehaviour
     {
         //right
         pattern.Add(new Vector3(1,0,0));
-        //up
-        pattern.Add(new Vector3(0, 1, 0));
+        pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(1, 0, 0));
+        pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(-1, 0, 0));
         //attack
         pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(-1, 0, 0));
+        pattern.Add(new Vector3(3, 0, 0));
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
         
@@ -63,15 +67,16 @@ public class Enemy : MonoBehaviour
            if(IdleTime > IdleTurnLimit){
                //can change state/attack
                int select = Random.Range(0,10);
-               if (select > 6)
+               if (select > 12)
                {
                    GameplayState = 2;
                    AnimState = 2;
                    curFrame = 0;
                    texture.sprite = AttackAnimations[curFrame];
                    AnimTime = 0;
+                   fireTime = fireRate + 1;
                }
-               else if (select > 3)
+               else if (select > 13)
                {
                    GameplayState = 1;
                    AnimState = 1;
@@ -85,6 +90,39 @@ public class Enemy : MonoBehaviour
                        GameplayState = 2;
                        AnimState = 2;
                        texture.sprite = AttackAnimations[curFrame];
+                       fireTime = fireRate + 1;
+                   }
+                   if (direction.x == 3)
+                   {
+                       GameplayState = 0;
+                       AnimState = 0;
+                       texture.sprite = IdleAnimations[curFrame];
+                   }
+                   if (patterncount >= pattern.Count)
+                   {
+                       patterncount = 0;
+                   }
+               }
+               else {
+                   GameplayState = 1;
+                   AnimState = 1;
+                   curFrame = 0;
+                   texture.sprite = WalkAnimations[curFrame];
+                   AnimTime = 0;
+                   direction = pattern[patterncount];
+                   patterncount++;
+                   if (direction.x == 2)
+                   {
+                       GameplayState = 2;
+                       AnimState = 2;
+                       texture.sprite = AttackAnimations[curFrame];
+                       fireTime = fireRate + 1;
+                   }
+                   if (direction.x == 3)
+                   {
+                       GameplayState = 0;
+                       AnimState = 0;
+                       texture.sprite = IdleAnimations[curFrame];
                    }
                    if (patterncount >= pattern.Count)
                    {
@@ -103,15 +141,16 @@ public class Enemy : MonoBehaviour
             if (WalkTime > WalkTurnLimit){
                 //can stop walking
                 int select = Random.Range(0, 10);
-                if (select > 4)
+                if (select > 14)
                 {
                     GameplayState = 2;
                     AnimState = 2;
                     curFrame = 0;
                     texture.sprite = AttackAnimations[curFrame];
                     AnimTime = 0;
+                    fireTime = fireRate + 1;
                 }
-                else if (select > 1)
+                else if (select > 11)
                 {
                     GameplayState = 0;
                     AnimState = 0;
@@ -120,8 +159,26 @@ public class Enemy : MonoBehaviour
                     AnimTime = 0;
                 }
                 else {
+                    GameplayState = 1;
+                    AnimState = 1;
+                    curFrame = 0;
+                    texture.sprite = WalkAnimations[curFrame];
+                    AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
+                    if (direction.x == 2)
+                    {
+                        GameplayState = 2;
+                        AnimState = 2;
+                        texture.sprite = AttackAnimations[curFrame];
+                        fireTime = fireRate + 1;
+                    }
+                    if (direction.x == 3)
+                    {
+                        GameplayState = 0;
+                        AnimState = 0;
+                        texture.sprite = IdleAnimations[curFrame];
+                    }
                     if (patterncount >= pattern.Count)
                     {
                         patterncount = 0;
@@ -151,7 +208,7 @@ public class Enemy : MonoBehaviour
             {
                 //can stop walking
                 int select = Random.Range(0, 10);
-                if (select > 5)
+                if (select > 15)
                 {
                     GameplayState = 1;
                     AnimState = 1;
@@ -165,19 +222,47 @@ public class Enemy : MonoBehaviour
                         GameplayState = 2;
                         AnimState = 2;
                         texture.sprite = AttackAnimations[curFrame];
+                        fireTime = fireRate + 1;
                     }
                     if (patterncount >= pattern.Count)
                     {
                         patterncount = 0;
                     }
                 }
-                else if (select > 3)
+                else if (select > 13)
                 {
                     GameplayState = 0;
                     AnimState = 0;
                     curFrame = 0;
                     texture.sprite = IdleAnimations[curFrame];
                     AnimTime = 0;
+                }
+                else
+                {
+                    GameplayState = 1;
+                    AnimState = 1;
+                    curFrame = 0;
+                    texture.sprite = WalkAnimations[curFrame];
+                    AnimTime = 0;
+                    direction = pattern[patterncount];
+                    patterncount++;
+                    if (direction.x == 2)
+                    {
+                        GameplayState = 2;
+                        AnimState = 2;
+                        texture.sprite = AttackAnimations[curFrame];
+                        fireTime = fireRate + 1;
+                    }
+                    if (direction.x == 3)
+                    {
+                        GameplayState = 0;
+                        AnimState = 0;
+                        texture.sprite = IdleAnimations[curFrame];
+                    }
+                    if (patterncount >= pattern.Count)
+                    {
+                        patterncount = 0;
+                    }
                 }
                 
                 AttackTime = 0;
