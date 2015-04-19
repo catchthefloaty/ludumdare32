@@ -260,6 +260,22 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleTimings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkTimings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleAnimations.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkAnimations.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 438540, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -292,6 +308,76 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleAnimations.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleAnimations.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300004, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleAnimations.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300002, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleAnimations.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300004, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: AttackAnimations.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkAnimations.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkAnimations.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300008, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkAnimations.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkAnimations.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300010, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleTimings.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleTimings.Array.data[1]
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleTimings.Array.data[2]
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: IdleTimings.Array.data[3]
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411278, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: WalkTimings.Array.data[3]
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21261940, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 6aca6b4ab4921a74ca23079c9fcc46c5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4af8c3f161fa0d4419184caf0a5145ee, type: 2}
   m_IsPrefabParent: 0
