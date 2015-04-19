@@ -200,19 +200,16 @@ public class Enemy : MonoBehaviour
     void Attack()
     {
         GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f),0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f,0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0,bullets.GetLength(0))];
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, 1f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
     }
 }
