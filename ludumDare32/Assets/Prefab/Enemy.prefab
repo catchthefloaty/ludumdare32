@@ -98,53 +98,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f551ee4da6034d145b54911e89598ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleAnimations:
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300004, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  IdleTimings:
-  - .5
-  - .100000001
-  - .100000001
-  - 0
-  IdleTimingOffsets:
-  - 0
-  - 0
-  - 0
-  - 0
-  WalkAnimations:
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300006, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300008, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  WalkTimings:
-  - .100000001
-  - .100000001
-  - .100000001
-  - .100000001
-  AttackAnimations:
-  - {fileID: 21300010, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  AttackTimings:
-  - 0
+  IdleAnimations: []
+  IdleTimings: []
+  IdleTimingOffsets: []
+  WalkAnimations: []
+  WalkTimings: []
+  AttackAnimations: []
+  AttackTimings: []
   SleepAnimations: []
   SleepTimes: []
   SleepLimit: 0
-  bullets:
-  - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  - {fileID: 21300002, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  - {fileID: 21300004, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  - {fileID: 21300006, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  - {fileID: 21300008, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  - {fileID: 21300010, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
-  IdleTurnLimit: 2
-  WalkTurnLimit: 1.5
-  AttackTurnLimit: 3
+  bullets: []
+  IdleTurnLimit: 0
+  WalkTurnLimit: 0
+  AttackTurnLimit: 0
   GameplayState: 0
+  patterncount: 0
   moveSpeed: 3
   AnimState: 0
-  bullet1: {fileID: 181640, guid: f4ea6dba5cea0db46980263769c0d096, type: 2}
-  fireRate: 7
+  curFrame: 0
+  bullet1: {fileID: 0}
+  fireRate: 0
 --- !u!212 &21261940
 SpriteRenderer:
   m_ObjectHideFlags: 1

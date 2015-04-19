@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float[] IdleTimingOffsets;
     public Sprite[] WalkAnimations;
     public float[] WalkTimings;
+    public Sprite[] AttackAnimations;
+    public float[] AttackTimings;
     float AnimTime;
     int GameplayState = 1;
     public float moveSpeed = 3;
@@ -38,7 +40,8 @@ public class Player : MonoBehaviour
 
         if (health < 4)
         {
-            for(int i = health; i < 4; i++){
+            for (int i = health; i < 4; i++)
+            {
                 Hearts[i].SetActive(false);
             }
             if (health < 1)
@@ -63,9 +66,9 @@ public class Player : MonoBehaviour
             {
                 GameplayState = 2;
                 mouseclick = Input.mousePosition;
-                
+
             }
-        
+
         }
         else if (GameplayState == 1)
         {
@@ -88,7 +91,7 @@ public class Player : MonoBehaviour
                 v = -1;
             }
             transform.Translate(h * Time.deltaTime * moveSpeed, v * Time.deltaTime * moveSpeed, 0);
-            
+
 
 
             if (v == 0 && h == 0)
@@ -102,6 +105,8 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0) == true)
             {
                 GameplayState = 2;
+                AnimState = 2;
+                curFrame = 0;
                 mouseclick = Input.mousePosition;
 
             }
@@ -143,10 +148,26 @@ public class Player : MonoBehaviour
                 texture.sprite = WalkAnimations[curFrame];
             }
         }
+
+        else if (AnimState == 2)
+        {
+            AnimTime += Time.deltaTime;
+            if (AnimTime > AttackTimings[curFrame])
+            {
+                AnimTime = 0;
+                curFrame++;
+                if (curFrame >= AttackAnimations.GetLength(0))
+                {
+                    curFrame = 0;
+                }
+                texture.sprite = AttackAnimations[curFrame];
+            }
+        }
+        
     }
     void FireBullet1(Vector3 targetvector)
     {
-        GameObject tempBullet = (GameObject)GameObject.Instantiate(bullet1,transform.position,Quaternion.identity);
+        GameObject tempBullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet b = tempBullet.GetComponent<Bullet>();
         Ray ray = Camera.main.ScreenPointToRay(targetvector);
         Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, 0));
