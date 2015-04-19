@@ -22,9 +22,9 @@ public class Bullet : MonoBehaviour {
     void Update()
     {
 
-        OffsetPos += new Vector3(speed * Mathf.Sin((deg + degOffset) * Mathf.Deg2Rad), speed * Mathf.Cos((deg + degOffset) * Mathf.Deg2Rad), 0);
+        OffsetPos += new Vector3(Time.deltaTime * speed * Mathf.Sin((deg + degOffset) * Mathf.Deg2Rad), Time.deltaTime * speed * Mathf.Cos((deg + degOffset) * Mathf.Deg2Rad), 0);
         transform.position = origPos + OffsetPos;
-        speed += Mathf.Pow(speed, speedexp) * Time.deltaTime * Time.deltaTime;
+        speed += Mathf.Pow(speed, speedexp) * Time.deltaTime;
 
         if (right == true)
         {
