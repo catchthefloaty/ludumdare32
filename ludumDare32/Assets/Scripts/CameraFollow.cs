@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour {
     public int followStatey1 = 0;
     public int followStatex2 = 1;
     public int followStatey2 = 1;
-    private float f = .015f;
+    public float f = .015f;
 	// Use this for initialization
 	void Start () {
         p = GameObject.FindGameObjectWithTag("Player");
