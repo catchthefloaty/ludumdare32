@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //right
+        pattern.Add(new Vector3(3, 0, 0));
         pattern.Add(new Vector3(1,0,0));
         pattern.Add(new Vector3(2, 0, 0));
         pattern.Add(new Vector3(1, 0, 0));
@@ -48,10 +49,10 @@ public class Enemy : MonoBehaviour
         //attack
         pattern.Add(new Vector3(2, 0, 0));
         pattern.Add(new Vector3(-1, 0, 0));
-        pattern.Add(new Vector3(3, 0, 0));
+        
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
-        
+        IdleTime = IdleTurnLimit;
     }
 
     // Update is called once per frame

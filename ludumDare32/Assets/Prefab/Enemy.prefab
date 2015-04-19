@@ -74,9 +74,9 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
   - {fileID: 21300004, guid: 6aca6b4ab4921a74ca23079c9fcc46c5, type: 3}
   IdleTimings:
-  - 3.5
-  - .0500000007
-  - .0500000007
+  - .5
+  - .100000001
+  - .100000001
   - 0
   IdleTimingOffsets:
   - 0
