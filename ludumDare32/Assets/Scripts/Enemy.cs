@@ -44,15 +44,15 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //right
-        pattern.Add(new Vector3(3, 0, 0));
-        pattern.Add(new Vector3(1,0,0));
-        pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(1, 0, 0));
+        pattern.Add(new Vector3(2,0,0));
         pattern.Add(new Vector3(1, 0, 0));
         pattern.Add(new Vector3(2, 0, 0));
         pattern.Add(new Vector3(-1, 0, 0));
-        //attack
         pattern.Add(new Vector3(2, 0, 0));
+        //attack
         pattern.Add(new Vector3(-1, 0, 0));
+        pattern.Add(new Vector3(2, 0, 0));
         
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
@@ -348,16 +348,13 @@ public class Enemy : MonoBehaviour
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0,bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(),Bullet.GetComponent<BoxCollider2D>(),true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-.707f, -.707f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, 1f, 0);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.707f,-.707f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
-        Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(1f, 0, 0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        
     }
 }
