@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdleAnimations:
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300004, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300002, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300002, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300004, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300006, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300004, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
   IdleTimings:
   - 1
   - .5
@@ -114,21 +114,21 @@ MonoBehaviour:
   - 0
   - 0
   WalkAnimations:
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300006, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  - {fileID: 21300008, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300002, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300008, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300002, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
+  - {fileID: 21300010, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
   WalkTimings:
   - .200000003
   - .200000003
   - .200000003
   - .200000003
   AttackAnimations:
-  - {fileID: 21300010, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300000, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
   AttackTimings:
   - 0
   SleepAnimations:
-  - {fileID: 21300004, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  - {fileID: 21300004, guid: c26c00cbf5ea0fa45bc614eaa9ef8767, type: 3}
   SleepTimes:
   - 0
   SleepLimit: 1.00000003e+16
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 80bc89402d4ac9840b934b605dbb6a6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
