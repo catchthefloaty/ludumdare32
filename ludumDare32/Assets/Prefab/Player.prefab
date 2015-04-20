@@ -110,12 +110,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1d7c0b86121f41641813642c8e10e51a, type: 3}
   - {fileID: 21300004, guid: 1d7c0b86121f41641813642c8e10e51a, type: 3}
   WalkTimings:
-  - 0
-  - 0
-  - 0
-  - 0
+  - .0500000007
+  - .0500000007
+  - .0500000007
+  - .0500000007
   AttackAnimations:
-  - {fileID: 21300012, guid: 1d7c0b86121f41641813642c8e10e51a, type: 3}
+  - {fileID: 21300000, guid: 1d7c0b86121f41641813642c8e10e51a, type: 3}
   AttackTimings:
   - 0
   moveSpeed: 3
