@@ -7,6 +7,7 @@ TagManager:
   - camerawall
   - camerabounds
   - Enemy
+  - level
   layers:
   - Default
   - TransparentFX
