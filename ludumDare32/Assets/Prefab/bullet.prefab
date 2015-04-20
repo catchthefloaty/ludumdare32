@@ -79,7 +79,7 @@ MonoBehaviour:
   lifeSpan: 6
   dir: 1
   ed: {fileID: 8300000, guid: 11d1fc903614a41479d0ed6b9c35e7b4, type: 3}
-  eu: {fileID: 0}
+  eu: {fileID: 8300000, guid: 932a519543f6bef4aa473176218c135a, type: 3}
   vol: .0799999982
 --- !u!212 &21272828
 SpriteRenderer:

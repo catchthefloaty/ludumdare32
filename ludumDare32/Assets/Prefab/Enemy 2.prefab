@@ -136,7 +136,7 @@ MonoBehaviour:
   - {fileID: 21300008, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
   - {fileID: 21300010, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
   IdleTurnLimit: 3
-  WalkTurnLimit: 3
+  WalkTurnLimit: .800000012
   AttackTurnLimit: 3
   GameplayState: 0
   patterncount: 0

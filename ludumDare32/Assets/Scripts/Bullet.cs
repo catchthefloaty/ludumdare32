@@ -108,6 +108,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e.GetComponent<SpriteRenderer>().enabled = true;
                     e.GetComponent<SpriteRenderer>().sprite = e.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -133,6 +134,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e1.GetComponent<SpriteRenderer>().enabled = true;
                     e1.GetComponent<SpriteRenderer>().sprite = e1.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -157,6 +159,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e2.GetComponent<SpriteRenderer>().enabled = true;
                     e2.GetComponent<SpriteRenderer>().sprite = e2.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -181,6 +184,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e3.GetComponent<SpriteRenderer>().enabled = true;
                     e3.GetComponent<SpriteRenderer>().sprite = e3.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -205,6 +209,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e4.GetComponent<SpriteRenderer>().enabled = true;
                     e4.GetComponent<SpriteRenderer>().sprite = e4.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -229,6 +234,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e5.GetComponent<SpriteRenderer>().enabled = true;
                     e5.GetComponent<SpriteRenderer>().sprite = e5.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -253,6 +259,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e6.GetComponent<SpriteRenderer>().enabled = true;
                     e6.GetComponent<SpriteRenderer>().sprite = e6.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;
@@ -278,6 +285,7 @@ public class Bullet : MonoBehaviour {
                     level.GetComponent<levelManager>().enemycount++;
                     e8.GetComponent<SpriteRenderer>().enabled = true;
                     e8.GetComponent<SpriteRenderer>().sprite = e8.IdleAnimations[0];
+                    AudioSource.PlayClipAtPoint(eu, new Vector3(0, 0, 0), vol);
                 }
                 Destroy(gameObject);
                 return;

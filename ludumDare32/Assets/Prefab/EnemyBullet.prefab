@@ -57,6 +57,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   speed: 3
   LifeSpan: 6
+  up: {fileID: 8300000, guid: 932a519543f6bef4aa473176218c135a, type: 3}
+  vol: .0799999982
 --- !u!212 &21247830
 SpriteRenderer:
   m_ObjectHideFlags: 1

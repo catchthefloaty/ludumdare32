@@ -44,15 +44,23 @@ public class BossEnemy : MonoBehaviour
     {
         //right
         //use an x value of 2, 4-11
-        pattern.Add(new Vector3(0, 1, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(1, 0, 0));
-        pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(0, -1, 0));
-        pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(4, 0, 0));
+        pattern.Add(new Vector3(5, 0, 0));
+        pattern.Add(new Vector3(6, 0, 0));
+        pattern.Add(new Vector3(7, 0, 0));
+        pattern.Add(new Vector3(8, 0, 0));
         //attack
-        pattern.Add(new Vector3(-1, 0, 0));
-        pattern.Add(new Vector3(2, 0, 0));
+        pattern.Add(new Vector3(9, 0, 0));
+        pattern.Add(new Vector3(10, 0, 0));
+        pattern.Add(new Vector3(11, 0, 0));
+        pattern.Add(new Vector3(12, 0, 0));
+        pattern.Add(new Vector3(13, 0, 0));
+        pattern.Add(new Vector3(14, 0, 0));
+        pattern.Add(new Vector3(15, 0, 0));
+        pattern.Add(new Vector3(16, 0, 0));
+        pattern.Add(new Vector3(17, 0, 0));
+        pattern.Add(new Vector3(18, 0, 0));
 
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
@@ -238,9 +246,41 @@ public class BossEnemy : MonoBehaviour
                 {
                     Attack7();
                 }
-                else if (direction.x == 9)
+                else if (direction.x == 10)
                 {
                     Attack8();
+                }
+                else if (direction.x == 11)
+                {
+                    Attack9();
+                }
+                else if (direction.x ==12)
+                {
+                    Attack10();
+                }
+                else if (direction.x == 13)
+                {
+                    Attack11();
+                }
+                else if (direction.x == 14)
+                {
+                    Attack12();
+                }
+                else if (direction.x == 15)
+                {
+                    Attack13();
+                }
+                else if (direction.x == 16)
+                {
+                    Attack14();
+                }
+                else if (direction.x == 17)
+                {
+                    Attack15();
+                }
+                else if (direction.x == 18)
+                {
+                    Attack16();
                 }
 
                 fireTime = 0;
@@ -383,49 +423,114 @@ public class BossEnemy : MonoBehaviour
     void Attack()
     {
         GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f, 0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
-        Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
-        Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, 1f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
-        Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(1f, 0, 0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        
     }
     void Attack2()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-0.383f, 0.924f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack3()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-0.707f, .707f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack4()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-.924f, .383f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack5()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1, 0, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack6()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-.924f, -.383f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack7()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-0.707f, -.707f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack8()
     {
-
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-.383f, -.924f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
-
+    void Attack9()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack10()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.383f, -.924f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack11()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.707f, -.707f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack12()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.924f, -.383f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack13()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(1, 0f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack14()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.924f, .383f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack15()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0.707f, .707f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
+    void Attack16()
+    {
+        GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(.383f, .924f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+    }
 }
