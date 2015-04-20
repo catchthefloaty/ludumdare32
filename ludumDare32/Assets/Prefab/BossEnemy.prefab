@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .879999995, y: .519999981, z: 0}
+  m_LocalPosition: {x: -2.95000005, y: .519999981, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453444}
@@ -98,27 +98,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c56be41e65d6243b616122280392a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleAnimations: []
-  IdleTimings: []
-  IdleTimingOffsets: []
-  WalkAnimations: []
-  WalkTimings: []
-  AttackAnimations: []
-  AttackTimings: []
-  SleepAnimations: []
-  SleepTimes: []
-  SleepLimit: 0
-  bullets: []
-  IdleTurnLimit: 0
-  WalkTurnLimit: 0
-  AttackTurnLimit: 0
+  IdleAnimations:
+  - {fileID: 21300006, guid: 71a4a7182f5835f46b007ae0e41deead, type: 3}
+  IdleTimings:
+  - 0
+  IdleTimingOffsets:
+  - 0
+  WalkAnimations:
+  - {fileID: 21300006, guid: 71a4a7182f5835f46b007ae0e41deead, type: 3}
+  WalkTimings:
+  - 0
+  AttackAnimations:
+  - {fileID: 21300006, guid: 71a4a7182f5835f46b007ae0e41deead, type: 3}
+  AttackTimings:
+  - 0
+  bullets:
+  - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300002, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300004, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300006, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300008, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300010, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  IdleTurnLimit: 2
+  WalkTurnLimit: 2
+  AttackTurnLimit: 2
   GameplayState: 0
   patterncount: 0
   moveSpeed: 3
+  SleepAnimations:
+  - {fileID: 21300012, guid: 71a4a7182f5835f46b007ae0e41deead, type: 3}
+  SleepTimes:
+  - 0
+  SleepLimit: 1.00000002e+21
   AnimState: 0
   curFrame: 0
-  bullet1: {fileID: 0}
-  fireRate: 0
+  bullet1: {fileID: 181640, guid: f4ea6dba5cea0db46980263769c0d096, type: 2}
+  fireRate: 1.20000005
 --- !u!212 &21261940
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -143,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 71a4a7182f5835f46b007ae0e41deead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
