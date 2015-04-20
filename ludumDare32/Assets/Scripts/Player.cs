@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     int curFrame;
     int h;
     int v;
+    public Sprite[] notes;
     public int health = 4;
     public GameObject gameover;
     GameObject target;
@@ -234,7 +235,7 @@ public class Player : MonoBehaviour
         cPoint.z = 0;
         target.transform.position = cPoint;
         Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
-
+        tempBullet.GetComponent<SpriteRenderer>().sprite = notes[Random.Range(0, notes.GetLength(0))];
         float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
         tempBullet.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360);
@@ -251,7 +252,7 @@ public class Player : MonoBehaviour
         float distance;
         xy.Raycast(ray, out distance);
         Vector3 cPoint = ray.GetPoint(distance);
-
+        tempBullet.GetComponent<SpriteRenderer>().sprite = notes[Random.Range(0, notes.GetLength(0))];
         cPoint.z = 0;
         target.transform.position = cPoint;
         Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
