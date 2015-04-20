@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour {
     float lifeTime;
     GameObject level;
     public int dir = 1;
+    //public GameObject[] notes;
 	// Use this for initialization
 	void Start () {
         origPos = transform.position;

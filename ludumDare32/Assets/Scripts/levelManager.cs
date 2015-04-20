@@ -6,7 +6,7 @@ public class levelManager : MonoBehaviour {
     public string nextlevel;
     public int enemycount;
     SpriteRenderer black;
-    float alpha = 0;
+
     bool done = false;
 	// Use this for initialization
 	void Start () {

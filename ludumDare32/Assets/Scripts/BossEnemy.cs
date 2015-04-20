@@ -13,10 +13,6 @@ public class BossEnemy : MonoBehaviour
     public float[] WalkTimings;
     public Sprite[] AttackAnimations;
     public float[] AttackTimings;
-    public Sprite[] SleepAnimations;
-    public float[] SleepTimes;
-    float sleepTimer;
-    public float SleepLimit;
     public Sprite[] bullets;
     float IdleTime;
     public float IdleTurnLimit;
@@ -29,12 +25,15 @@ public class BossEnemy : MonoBehaviour
     List<Vector3> pattern = new List<Vector3>();
     public int patterncount;
     public float moveSpeed = 3;
-
+    public Sprite[] SleepAnimations;
+    public float[] SleepTimes;
+    float sleepTimer;
+    public float SleepLimit;
     public int AnimState;
     public int curFrame;
     Vector3 direction;
-    
-    
+
+
     public GameObject bullet1;
 
 
@@ -44,16 +43,17 @@ public class BossEnemy : MonoBehaviour
     void Start()
     {
         //right
-        pattern.Add(new Vector3(3, 0, 0));
-        pattern.Add(new Vector3(1,0,0));
+        //use an x value of 2, 4-11
+        pattern.Add(new Vector3(0, 1, 0));
         pattern.Add(new Vector3(2, 0, 0));
         pattern.Add(new Vector3(1, 0, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(-1, 0, 0));
-        //attack
+        pattern.Add(new Vector3(0, -1, 0));
         pattern.Add(new Vector3(2, 0, 0));
+        //attack
         pattern.Add(new Vector3(-1, 0, 0));
-        
+        pattern.Add(new Vector3(2, 0, 0));
+
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;
         IdleTime = IdleTurnLimit;
@@ -69,81 +69,85 @@ public class BossEnemy : MonoBehaviour
         if (GameplayState == 0)
         {
             IdleTime += Time.deltaTime;
-           if(IdleTime > IdleTurnLimit){
-               //can change state/attack
-               int select = Random.Range(0,10);
-               if (select > 12)
-               {
-                   GameplayState = 2;
-                   AnimState = 2;
-                   curFrame = 0;
-                   texture.sprite = AttackAnimations[curFrame];
-                   AnimTime = 0;
-                   fireTime = fireRate + 1;
-               }
-               else if (select > 13)
-               {
-                   GameplayState = 1;
-                   AnimState = 1;
-                   curFrame = 0;
-                   texture.sprite = WalkAnimations[curFrame];
-                   AnimTime = 0;
-                   direction = pattern[patterncount];
-                   patterncount++;
-                   if (direction.x == 2)
-                   {
-                       GameplayState = 2;
-                       AnimState = 2;
-                       texture.sprite = AttackAnimations[curFrame];
-                       fireTime = fireRate + 1;
-                   }
-                   if (direction.x == 3)
-                   {
-                       GameplayState = 0;
-                       AnimState = 0;
-                       texture.sprite = IdleAnimations[curFrame];
-                   }
-                   if (patterncount >= pattern.Count)
-                   {
-                       patterncount = 0;
-                   }
-               }
-               else {
-                   GameplayState = 1;
-                   AnimState = 1;
-                   curFrame = 0;
-                   texture.sprite = WalkAnimations[curFrame];
-                   AnimTime = 0;
-                   direction = pattern[patterncount];
-                   patterncount++;
-                   if (direction.x == 2)
-                   {
-                       GameplayState = 2;
-                       AnimState = 2;
-                       texture.sprite = AttackAnimations[curFrame];
-                       fireTime = fireRate + 1;
-                   }
-                   if (direction.x == 3)
-                   {
-                       GameplayState = 0;
-                       AnimState = 0;
-                       texture.sprite = IdleAnimations[curFrame];
-                   }
-                   if (patterncount >= pattern.Count)
-                   {
-                       patterncount = 0;
-                   }
-               }
-               
-               IdleTime = 0;
-           }
+            if (IdleTime > IdleTurnLimit)
+            {
+                //can change state/attack
+                int select = Random.Range(0, 10);
+                if (select > 12)
+                {
+                    GameplayState = 2;
+                    AnimState = 2;
+                    curFrame = 0;
+                    texture.sprite = AttackAnimations[curFrame];
+                    AnimTime = 0;
+                    fireTime = fireRate + 1;
+                }
+                else if (select > 13)
+                {
+                    GameplayState = 1;
+                    AnimState = 1;
+                    curFrame = 0;
+                    texture.sprite = WalkAnimations[curFrame];
+                    AnimTime = 0;
+                    direction = pattern[patterncount];
+                    patterncount++;
+                    if (direction.x == 2 || direction.x >= 4)
+                    {
+                        GameplayState = 2;
+                        AnimState = 2;
+                        texture.sprite = AttackAnimations[curFrame];
+                        fireTime = fireRate + 1;
+                    }
+
+                    if (direction.x == 3)
+                    {
+                        GameplayState = 0;
+                        AnimState = 0;
+                        texture.sprite = IdleAnimations[curFrame];
+                    }
+                    if (patterncount >= pattern.Count)
+                    {
+                        patterncount = 0;
+                    }
+                }
+                else
+                {
+                    GameplayState = 1;
+                    AnimState = 1;
+                    curFrame = 0;
+                    texture.sprite = WalkAnimations[curFrame];
+                    AnimTime = 0;
+                    direction = pattern[patterncount];
+                    patterncount++;
+                    if (direction.x == 2 || direction.x >= 4)
+                    {
+                        GameplayState = 2;
+                        AnimState = 2;
+                        texture.sprite = AttackAnimations[curFrame];
+                        fireTime = fireRate + 1;
+                    }
+                    if (direction.x == 3)
+                    {
+                        GameplayState = 0;
+                        AnimState = 0;
+                        texture.sprite = IdleAnimations[curFrame];
+                    }
+                    if (patterncount >= pattern.Count)
+                    {
+                        patterncount = 0;
+                    }
+                }
+
+                IdleTime = 0;
+            }
 
         }
-            //walk in direction vector
+        //walk in direction vector
         else if (GameplayState == 1)
         {
             WalkTime += Time.deltaTime;
-            if (WalkTime > WalkTurnLimit){
+            if (WalkTime > WalkTurnLimit)
+            {
                 //can stop walking
                 int select = Random.Range(0, 10);
                 if (select > 14)
@@ -163,7 +167,8 @@ public class BossEnemy : MonoBehaviour
                     texture.sprite = IdleAnimations[curFrame];
                     AnimTime = 0;
                 }
-                else {
+                else
+                {
                     GameplayState = 1;
                     AnimState = 1;
                     curFrame = 0;
@@ -171,7 +176,7 @@ public class BossEnemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -189,23 +194,55 @@ public class BossEnemy : MonoBehaviour
                         patterncount = 0;
                     }
                 }
-                
+
                 WalkTime = 0;
             }
             transform.Translate(direction.x * Time.deltaTime * moveSpeed, direction.y * Time.deltaTime * moveSpeed, 0);
             //rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*Time.deltaTime * moveSpeed,Input.GetAxis("Vertical")* Time.deltaTime*moveSpeed));
 
 
-            
-                
-            
+
+
+
         }
         else if (GameplayState == 2)
         {
             fireTime += Time.deltaTime;
             if (fireTime > fireRate)
             {
-                Attack();
+                if (direction.x == 2)
+                {
+                    Attack();
+                }
+                else if (direction.x == 4)
+                {
+                    Attack2();
+                }
+                else if (direction.x == 5)
+                {
+                    Attack3();
+                }
+                else if (direction.x == 6)
+                {
+                    Attack4();
+                }
+                else if (direction.x == 7)
+                {
+                    Attack5();
+                }
+                else if (direction.x == 8)
+                {
+                    Attack6();
+                }
+                else if (direction.x == 9)
+                {
+                    Attack7();
+                }
+                else if (direction.x == 9)
+                {
+                    Attack8();
+                }
+
                 fireTime = 0;
             }
             AttackTime += Time.deltaTime;
@@ -222,7 +259,7 @@ public class BossEnemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -251,7 +288,7 @@ public class BossEnemy : MonoBehaviour
                     AnimTime = 0;
                     direction = pattern[patterncount];
                     patterncount++;
-                    if (direction.x == 2)
+                    if (direction.x == 2 || direction.x >= 4)
                     {
                         GameplayState = 2;
                         AnimState = 2;
@@ -269,11 +306,11 @@ public class BossEnemy : MonoBehaviour
                         patterncount = 0;
                     }
                 }
-                
+
                 AttackTime = 0;
             }
         }
-        
+
 
         //animation stuffwd
         if (AnimState == 0)
@@ -314,12 +351,13 @@ public class BossEnemy : MonoBehaviour
                 if (curFrame >= AttackAnimations.GetLength(0))
                 {
                     curFrame = 0;
-                    
+
                 }
                 texture.sprite = AttackAnimations[curFrame];
             }
         }
-        else if (AnimState == 3){
+        else if (AnimState == 3)
+        {
             AnimTime += Time.deltaTime;
             if (AnimTime > SleepTimes[curFrame])
             {
@@ -333,7 +371,8 @@ public class BossEnemy : MonoBehaviour
                 texture.sprite = SleepAnimations[curFrame];
             }
             sleepTimer += Time.deltaTime;
-            if (sleepTimer>SleepLimit){
+            if (sleepTimer > SleepLimit)
+            {
                 sleepTimer = 0;
                 texture.enabled = !texture.enabled;
 
@@ -344,9 +383,9 @@ public class BossEnemy : MonoBehaviour
     void Attack()
     {
         GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
-        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f,0);
-        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0,bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(),Bullet.GetComponent<BoxCollider2D>(),true);
+        Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f, 0);
+        Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
+        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
@@ -360,4 +399,33 @@ public class BossEnemy : MonoBehaviour
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
         Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
+    void Attack2()
+    {
+
+    }
+    void Attack3()
+    {
+
+    }
+    void Attack4()
+    {
+
+    }
+    void Attack5()
+    {
+
+    }
+    void Attack6()
+    {
+
+    }
+    void Attack7()
+    {
+
+    }
+    void Attack8()
+    {
+
+    }
+
 }
