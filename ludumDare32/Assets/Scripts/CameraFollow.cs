@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour {
     public float f = .015f;
 	// Use this for initialization
 	void Start () {
-        p = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject;
+        p = GameObject.FindGameObjectWithTag("Player").transform.GetChild(1).gameObject;
 	}
 	
 	// Update is called once per frame
