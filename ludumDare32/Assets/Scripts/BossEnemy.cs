@@ -385,19 +385,19 @@ public class BossEnemy : MonoBehaviour
         GameObject Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, -1f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(-1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(0, 1f, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
         Bullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().direction = new Vector3(1f, 0, 0);
         Bullet.GetComponent<SpriteRenderer>().sprite = bullets[Random.Range(0, bullets.GetLength(0))];
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
+        Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), Bullet.GetComponent<BoxCollider2D>(), true);
     }
     void Attack2()
     {
