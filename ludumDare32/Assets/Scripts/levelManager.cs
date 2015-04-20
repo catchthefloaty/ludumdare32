@@ -5,8 +5,12 @@ public class levelManager : MonoBehaviour {
     //GameObject[] enemies;
     public string nextlevel;
     public int enemycount;
+    SpriteRenderer black;
+    float alpha = 0;
+    bool done = false;
 	// Use this for initialization
 	void Start () {
+        black = GameObject.FindGameObjectWithTag("black").GetComponent<SpriteRenderer>();
         enemycount = GameObject.FindGameObjectsWithTag("Enemy").GetLength(0);
 	}
 	
@@ -14,8 +18,17 @@ public class levelManager : MonoBehaviour {
 	void Update () {
         if (enemycount == 0)
         {
+            done = true;
+
+            //Application.LoadLevel(nextlevel);
+        }
+        if (done)
+        {
+            black.color = new Color(1,1,1,black.color.a+.01f);
+        }
+        if (black.color.a >= 1)
+        {
             Application.LoadLevel(nextlevel);
         }
-	
 	}
 }

@@ -8,6 +8,7 @@ TagManager:
   - camerabounds
   - Enemy
   - level
+  - black
   layers:
   - Default
   - TransparentFX
