@@ -15,8 +15,11 @@ public class levelManager : MonoBehaviour {
 	void Start () {
         black = GameObject.FindGameObjectWithTag("black").GetComponent<SpriteRenderer>();
         enemycount = GameObject.FindGameObjectsWithTag("Enemy").GetLength(0);
+        bonuslevels.Add("Ncliff2");
+        bonuslevels.Add("Nmoutain2");
+        bonuslevels.Add("Nmoutain3");
         bonuslevels.Add("Nforest3");
-        bonuslevels.Add("Nforest2");
+        
 	}
 	
 	// Update is called once per frame

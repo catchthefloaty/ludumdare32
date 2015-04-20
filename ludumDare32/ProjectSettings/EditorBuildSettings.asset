@@ -19,3 +19,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Nforest2.unity
   - enabled: 1
     path: Assets/Scenes/Nforest3.unity
+  - enabled: 1
+    path: Assets/Scenes/Ncliff2.unity
+  - enabled: 1
+    path: Assets/Scenes/Nmoutain2.unity
+  - enabled: 1
+    path: Assets/Scenes/Nmoutain3.unity
