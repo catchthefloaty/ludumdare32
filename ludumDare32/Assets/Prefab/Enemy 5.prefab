@@ -128,7 +128,7 @@ MonoBehaviour:
   AttackTimings:
   - 0
   SleepAnimations:
-  - {fileID: 21300004, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300002, guid: c26c00cbf5ea0fa45bc614eaa9ef8767, type: 3}
   SleepTimes:
   - 0
   SleepLimit: 9.99999998e+18
