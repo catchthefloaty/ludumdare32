@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour {
     public float lifeSpan = 6;
     float lifeTime;
     GameObject level;
+    public int dir = 1;
 	// Use this for initialization
 	void Start () {
         origPos = transform.position;
@@ -28,27 +29,53 @@ public class Bullet : MonoBehaviour {
         OffsetPos += new Vector3(Time.deltaTime * speed * Mathf.Sin((deg + degOffset) * Mathf.Deg2Rad), Time.deltaTime * speed * Mathf.Cos((deg + degOffset) * Mathf.Deg2Rad), 0);
         transform.position = origPos + OffsetPos;
         speed += Mathf.Pow(speed, speedexp) * Time.deltaTime;
-
-        if (right == true)
+        if (dir == 1)
         {
-            degOffset += (Freq * Time.deltaTime);
-            if (degOffset >= breakAngle)
+            if (right == true)
             {
-                right = false;
+                degOffset += (Freq * Time.deltaTime);
+                if (degOffset >= breakAngle)
+                {
+                    right = false;
+                }
+            }
+            else if (right == false)
+            {
+                degOffset -= (Freq * Time.deltaTime);
+                if (degOffset <= -breakAngle)
+                {
+                    right = true;
+                }
+            }
+            lifeTime += Time.deltaTime;
+            if (lifeTime > lifeSpan)
+            {
+                Destroy(gameObject);
             }
         }
-        else if (right == false)
+        else
         {
-            degOffset -= (Freq * Time.deltaTime);
-            if (degOffset <= -breakAngle)
+            if (right == true)
             {
-                right = true;
+                degOffset -= (Freq * Time.deltaTime);
+                if (degOffset <= -breakAngle)
+                {
+                    right = false;
+                }
             }
-        }
-        lifeTime += Time.deltaTime;
-        if (lifeTime > lifeSpan)
-        {
-            Destroy(gameObject);
+            else if (right == false)
+            {
+                degOffset += (Freq * Time.deltaTime);
+                if (degOffset >= breakAngle)
+                {
+                    right = true;
+                }
+            }
+            lifeTime += Time.deltaTime;
+            if (lifeTime > lifeSpan)
+            {
+                Destroy(gameObject);
+            }
         }
 
 
@@ -127,7 +154,7 @@ public class Bullet : MonoBehaviour {
             Enemy3 e3 = col.gameObject.GetComponent<Enemy3>();
             if (e3 != null)
             {
-                if (!(e.GameplayState == 3))
+                if (!(e3.GameplayState == 3))
                 {
                     e3.GameplayState = 3;
                     e3.AnimState = 3;

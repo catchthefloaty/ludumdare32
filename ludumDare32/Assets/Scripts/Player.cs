@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public GameObject bullet1;
     float fireTime;
     public float fireRate;
+    int dir = 0;
     // Use this for initialization
     void Start()
     {
@@ -72,8 +73,19 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0) == true)
             {
                 GameplayState = 2;
+                AnimState = 2;
+                curFrame = 0;
                 mouseclick = Input.mousePosition;
+                dir = 1;
 
+            }
+            if (Input.GetMouseButtonDown(1) == true)
+            {
+                GameplayState = 2;
+                AnimState = 2;
+                curFrame = 0;
+                mouseclick = Input.mousePosition;
+                dir = -1;
             }
 
         }
@@ -115,13 +127,35 @@ public class Player : MonoBehaviour
                 AnimState = 2;
                 curFrame = 0;
                 mouseclick = Input.mousePosition;
+                dir = 1;
 
+            }
+            if (Input.GetMouseButtonDown(1) == true)
+            {
+                GameplayState = 2;
+                AnimState = 2;
+                curFrame = 0;
+                mouseclick = Input.mousePosition;
+                dir = -1;
             }
 
         }
         else if (GameplayState == 2)
         {
-            FireBullet1(mouseclick);
+            if (fireTime >= fireRate)
+            {
+                if (dir == 1)
+                {
+                    FireBullet1(mouseclick);
+                    dir = 0;
+                }
+                else if (dir == -1)
+                {
+                    FireBullet2(mouseclick);
+                    dir = 0;
+                }
+                fireTime = 0;
+            }
             GameplayState = 0;
         }
 
@@ -206,6 +240,27 @@ public class Player : MonoBehaviour
         b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z-360);
         
         
+    }
+
+    void FireBullet2(Vector3 targetvector)
+    {
+        GameObject tempBullet = (GameObject)GameObject.Instantiate(bullet1, transform.GetChild(0).transform.position, Quaternion.identity);
+        Bullet b = tempBullet.GetComponent<Bullet>();
+        Ray ray = Camera.main.ScreenPointToRay(targetvector);
+        Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, 0));
+        float distance;
+        xy.Raycast(ray, out distance);
+        Vector3 cPoint = ray.GetPoint(distance);
+
+        cPoint.z = 0;
+        target.transform.position = cPoint;
+        Vector3 tempuntilbulletismade = Vector3.Normalize(target.transform.position - this.transform.position);
+
+        float rot_z = Mathf.Atan2(tempuntilbulletismade.y, tempuntilbulletismade.x) * Mathf.Rad2Deg;
+        tempBullet.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        b.deg = Mathf.Abs(Quaternion.Euler(0f, 0f, rot_z - 90).eulerAngles.z - 360);
+        b.dir = -1;
+
     }
 
     
