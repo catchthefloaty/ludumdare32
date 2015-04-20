@@ -44,6 +44,7 @@ public class EnemyBullet : MonoBehaviour {
                     e.curFrame = 0;
                     e.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -63,6 +64,7 @@ public class EnemyBullet : MonoBehaviour {
                     e1.curFrame = 0;
                     e1.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -81,6 +83,7 @@ public class EnemyBullet : MonoBehaviour {
                     e2.curFrame = 0;
                     e2.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -99,6 +102,7 @@ public class EnemyBullet : MonoBehaviour {
                     e3.curFrame = 0;
                     e3.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -117,6 +121,7 @@ public class EnemyBullet : MonoBehaviour {
                     e4.curFrame = 0;
                     e4.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -135,6 +140,7 @@ public class EnemyBullet : MonoBehaviour {
                     e5.curFrame = 0;
                     e5.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -153,6 +159,7 @@ public class EnemyBullet : MonoBehaviour {
                     e6.curFrame = 0;
                     e6.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;
@@ -172,6 +179,7 @@ public class EnemyBullet : MonoBehaviour {
                     e8.curFrame = 0;
                     e8.patterncount = 0;
                     level.GetComponent<levelManager>().enemycount++;
+                    e.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 Destroy(gameObject);
                 return;

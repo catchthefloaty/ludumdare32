@@ -1388,7 +1388,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
 --- !u!224 &1559870179
 RectTransform:
   m_ObjectHideFlags: 0

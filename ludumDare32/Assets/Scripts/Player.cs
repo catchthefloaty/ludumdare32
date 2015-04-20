@@ -37,16 +37,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (health < 0)
+        {
+            health = 0;
+        }
         if (health < 4)
         {
             for (int i = health; i < 4; i++)
             {
-                Hearts[i].SetActive(false);
+                if (i > -1)
+                {
+                    Hearts[i].SetActive(false);
+                }
             }
             if (health < 1)
             {
                 gameover.SetActive(true);
+                transform.GetChild(1).SetParent(null);
                 Destroy(gameObject);
             }
         }
