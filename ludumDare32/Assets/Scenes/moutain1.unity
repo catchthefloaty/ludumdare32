@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextlevel: cliff1
   enemycount: 0
+  notbonus: 1
 --- !u!4 &1821356070
 Transform:
   m_ObjectHideFlags: 0

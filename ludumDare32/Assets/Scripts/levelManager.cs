@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class levelManager : MonoBehaviour {
     //GameObject[] enemies;
     public string nextlevel;
     public int enemycount;
     SpriteRenderer black;
-
+    List<string> bonuslevels;
     bool done = false;
+    static int bonuscount = -1;
+    public bool notbonus = false;
 	// Use this for initialization
 	void Start () {
         black = GameObject.FindGameObjectWithTag("black").GetComponent<SpriteRenderer>();
@@ -30,7 +33,23 @@ public class levelManager : MonoBehaviour {
         }
         if (black.color.a >= 1)
         {
-            Application.LoadLevel(nextlevel);
+            if (!notbonus)
+            {
+                bonuscount++;
+            }
+            if (nextlevel != "")
+            {
+                Application.LoadLevel(nextlevel);
+            }
+            else if(bonuscount <= bonuslevels.Count)
+            {
+                Application.LoadLevel(bonuslevels[bonuscount]);
+            }
+            else
+            {
+                Application.LoadLevel("credits");
+            }
+            
         }
 	}
 }
