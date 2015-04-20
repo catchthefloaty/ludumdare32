@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     float fireTime;
     public float fireRate;
     int dir = 0;
+    public AudioClip hit;
+    public AudioClip[] fire;
     // Use this for initialization
     void Start()
     {
@@ -156,6 +158,7 @@ public class Player : MonoBehaviour
                     dir = 0;
                 }
                 fireTime = 0;
+                AudioSource.PlayClipAtPoint(fire[Random.Range(0,fire.GetLength(0))], new Vector3(0, 0, 0), .1f);
             }
             GameplayState = 0;
         }

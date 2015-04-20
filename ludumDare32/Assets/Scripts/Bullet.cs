@@ -16,6 +16,9 @@ public class Bullet : MonoBehaviour {
     float lifeTime;
     GameObject level;
     public int dir = 1;
+    public AudioClip ed;
+    public AudioClip eu;
+    public float vol;
     //public GameObject[] notes;
 	// Use this for initialization
 	void Start () {
@@ -94,6 +97,7 @@ public class Bullet : MonoBehaviour {
                     e.AnimState = 3;
                     e.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -118,6 +122,7 @@ public class Bullet : MonoBehaviour {
                     e1.AnimState = 3;
                     e1.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed,new Vector3(0,0,0),vol);
                 }
                 else
                 {
@@ -141,6 +146,7 @@ public class Bullet : MonoBehaviour {
                     e2.AnimState = 3;
                     e2.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -164,6 +170,7 @@ public class Bullet : MonoBehaviour {
                     e3.AnimState = 3;
                     e3.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -187,6 +194,7 @@ public class Bullet : MonoBehaviour {
                     e4.AnimState = 3;
                     e4.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -210,6 +218,7 @@ public class Bullet : MonoBehaviour {
                     e5.AnimState = 3;
                     e5.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -233,6 +242,7 @@ public class Bullet : MonoBehaviour {
                     e6.AnimState = 3;
                     e6.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {
@@ -257,6 +267,7 @@ public class Bullet : MonoBehaviour {
                     e8.AnimState = 3;
                     e8.curFrame = 0;
                     level.GetComponent<levelManager>().enemycount--;
+                    AudioSource.PlayClipAtPoint(ed, new Vector3(0, 0, 0), vol);
                 }
                 else
                 {

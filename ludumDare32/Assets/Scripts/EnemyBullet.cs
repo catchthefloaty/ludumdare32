@@ -25,6 +25,7 @@ public class EnemyBullet : MonoBehaviour {
         if (col.tag == "Player")
         {
             col.gameObject.GetComponent<Player>().health -= 1;
+            AudioSource.PlayClipAtPoint(col.gameObject.GetComponent<Player>().hit,new Vector3(0,0,0),.2f);
             Destroy(gameObject);
         }
 

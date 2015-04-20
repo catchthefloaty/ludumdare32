@@ -46,12 +46,12 @@ public class Enemy4 : MonoBehaviour
         //right
         pattern.Add(new Vector3(0, 1, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(0, 1, 0));
+        pattern.Add(new Vector3(-1, 0, 0));
         pattern.Add(new Vector3(2, 0, 0));
         pattern.Add(new Vector3(0, -1, 0));
         pattern.Add(new Vector3(2, 0, 0));
         //attack
-        pattern.Add(new Vector3(0, -1, 0));
+        pattern.Add(new Vector3(1, 0, 0));
         pattern.Add(new Vector3(2, 0, 0));
         
         texture = GetComponent<SpriteRenderer>();

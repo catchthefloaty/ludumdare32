@@ -144,7 +144,7 @@ MonoBehaviour:
   AnimState: 0
   curFrame: 0
   bullet1: {fileID: 181640, guid: f4ea6dba5cea0db46980263769c0d096, type: 2}
-  fireRate: 1.20000005
+  fireRate: 4
 --- !u!212 &21261940
 SpriteRenderer:
   m_ObjectHideFlags: 1
