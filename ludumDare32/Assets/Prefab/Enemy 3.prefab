@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .879999995, y: .519999981, z: 0}
+  m_LocalPosition: {x: -5.61000013, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453444}
@@ -98,26 +98,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a27f07ab2379b34188c765dae74906d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleAnimations: []
-  IdleTimings: []
-  IdleTimingOffsets: []
-  WalkAnimations: []
-  WalkTimings: []
-  AttackAnimations: []
-  AttackTimings: []
-  SleepAnimations: []
-  SleepTimes: []
-  SleepLimit: 0
-  bullets: []
-  IdleTurnLimit: 0
-  WalkTurnLimit: 0
-  AttackTurnLimit: 0
+  IdleAnimations:
+  - {fileID: 21300000, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300002, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300004, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300002, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  IdleTimings:
+  - 1
+  - .5
+  - .5
+  - .5
+  IdleTimingOffsets:
+  - 0
+  - 0
+  - 0
+  - 0
+  WalkAnimations:
+  - {fileID: 21300000, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300006, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300000, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  - {fileID: 21300008, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  WalkTimings:
+  - .200000003
+  - .200000003
+  - .200000003
+  - .200000003
+  AttackAnimations:
+  - {fileID: 21300010, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  AttackTimings:
+  - 0
+  SleepAnimations:
+  - {fileID: 21300004, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
+  SleepTimes:
+  - 0
+  SleepLimit: 9.99999984e+16
+  bullets:
+  - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300004, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300002, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300006, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300010, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  IdleTurnLimit: 2
+  WalkTurnLimit: 2
+  AttackTurnLimit: 2
   GameplayState: 0
   patterncount: 0
   moveSpeed: 3
   AnimState: 0
   curFrame: 0
-  bullet1: {fileID: 0}
+  bullet1: {fileID: 181640, guid: f4ea6dba5cea0db46980263769c0d096, type: 2}
   fireRate: 0
 --- !u!212 &21261940
 SpriteRenderer:
@@ -143,7 +172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf4b2482d7f20a741a29091a83b32d91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

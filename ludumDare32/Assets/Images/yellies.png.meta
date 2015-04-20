@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 3ea2b865e8a5f2a4ba88852250c4685d
-timeCreated: 1429455835
+timeCreated: 1429507996
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: yellies_0
+    21300002: yellies_1
+    21300004: yellies_2
+    21300006: yellies_3
+    21300008: yellies_4
+    21300010: yellies_5
+    21300012: yellies_6
+    21300014: yellies_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,15 +37,15 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 2
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +56,87 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: yellies_0
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 624
+        width: 231
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 622
+        width: 243
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_2
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 628
+        width: 222
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 622
+        width: 243
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_4
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 144
+        width: 243
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_5
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 144
+        width: 243
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_6
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 149
+        width: 243
+        height: 467
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yellies_7
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 601
+        width: 441
+        height: 426
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -44,15 +44,15 @@ public class Enemy4 : MonoBehaviour
     void Start()
     {
         //right
-        pattern.Add(new Vector3(3, 0, 0));
-        pattern.Add(new Vector3(1,0,0));
+        pattern.Add(new Vector3(0, 1, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(1, 0, 0));
+        pattern.Add(new Vector3(0, 1, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(-1, 0, 0));
+        pattern.Add(new Vector3(0, -1, 0));
+        pattern.Add(new Vector3(2, 0, 0));
         //attack
+        pattern.Add(new Vector3(0, -1, 0));
         pattern.Add(new Vector3(2, 0, 0));
-        pattern.Add(new Vector3(-1, 0, 0));
         
         texture = GetComponent<SpriteRenderer>();
         fireTime = fireRate + 1;

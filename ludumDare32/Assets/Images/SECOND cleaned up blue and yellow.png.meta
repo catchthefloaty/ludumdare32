@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 9c8cb75152231974ca64e2a506ff1048
-timeCreated: 1429505576
+guid: cf4b2482d7f20a741a29091a83b32d91
+timeCreated: 1429504137
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: borgies_0
-    21300002: borgies_1
-    21300004: borgies_2
-    21300006: borgies_3
-    21300008: borgies_4
-    21300010: borgies_5
+    21300000: SECOND cleaned up blue and yellow_0
+    21300002: SECOND cleaned up blue and yellow_1
+    21300004: SECOND cleaned up blue and yellow_2
+    21300006: SECOND cleaned up blue and yellow_3
+    21300008: SECOND cleaned up blue and yellow_4
+    21300010: SECOND cleaned up blue and yellow_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,63 +55,63 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: borgies_0
+    - name: SECOND cleaned up blue and yellow_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 377
-        width: 117
-        height: 196
+        x: 50
+        y: 736
+        width: 193
+        height: 366
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: borgies_1
+    - name: SECOND cleaned up blue and yellow_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 380
-        width: 117
-        height: 196
+        x: 254
+        y: 736
+        width: 194
+        height: 366
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: borgies_2
+    - name: SECOND cleaned up blue and yellow_2
       rect:
         serializedVersion: 2
-        x: 282
-        y: 380
-        width: 117
-        height: 196
+        x: 448
+        y: 736
+        width: 204
+        height: 366
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: borgies_3
+    - name: SECOND cleaned up blue and yellow_3
       rect:
         serializedVersion: 2
-        x: 201
-        y: 157
-        width: 117
-        height: 196
+        x: 56
+        y: 344
+        width: 198
+        height: 354
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: borgies_4
+    - name: SECOND cleaned up blue and yellow_4
       rect:
         serializedVersion: 2
-        x: 43
-        y: 160
-        width: 117
-        height: 196
+        x: 319
+        y: 338
+        width: 209
+        height: 349
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: borgies_5
+    - name: SECOND cleaned up blue and yellow_5
       rect:
         serializedVersion: 2
-        x: 837
-        y: 355
-        width: 127
-        height: 225
+        x: 1331
+        y: 698
+        width: 215
+        height: 410
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

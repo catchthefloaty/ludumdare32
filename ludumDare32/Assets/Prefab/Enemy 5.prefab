@@ -98,26 +98,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac93807759c27994e85e8de259210073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleAnimations: []
-  IdleTimings: []
-  IdleTimingOffsets: []
-  WalkAnimations: []
-  WalkTimings: []
-  AttackAnimations: []
-  AttackTimings: []
-  SleepAnimations: []
-  SleepTimes: []
-  SleepLimit: 0
-  bullets: []
-  IdleTurnLimit: 0
-  WalkTurnLimit: 0
-  AttackTurnLimit: 0
+  IdleAnimations:
+  - {fileID: 21300000, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300002, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300004, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300002, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  IdleTimings:
+  - 1
+  - .5
+  - .5
+  - .5
+  IdleTimingOffsets:
+  - 0
+  - 0
+  - 0
+  - 0
+  WalkAnimations:
+  - {fileID: 21300000, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300006, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300000, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  - {fileID: 21300008, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  WalkTimings:
+  - .200000003
+  - .200000003
+  - .200000003
+  - .200000003
+  AttackAnimations:
+  - {fileID: 21300010, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  AttackTimings:
+  - 0
+  SleepAnimations:
+  - {fileID: 21300004, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
+  SleepTimes:
+  - 0
+  SleepLimit: 9.99999998e+18
+  bullets:
+  - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300002, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300004, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300006, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300010, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  - {fileID: 21300008, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
+  IdleTurnLimit: 2
+  WalkTurnLimit: 2
+  AttackTurnLimit: 2
   GameplayState: 0
   patterncount: 0
   moveSpeed: 3
   AnimState: 0
   curFrame: 0
-  bullet1: {fileID: 0}
+  bullet1: {fileID: 181640, guid: f4ea6dba5cea0db46980263769c0d096, type: 2}
   fireRate: 0
 --- !u!212 &21261940
 SpriteRenderer:
@@ -143,7 +173,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c8cb75152231974ca64e2a506ff1048, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

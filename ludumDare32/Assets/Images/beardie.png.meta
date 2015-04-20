@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: a5293e82ac4379042b83f351c016dbf7
-timeCreated: 1429436383
+timeCreated: 1429504939
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: beardie_0
+    21300002: beardie_1
+    21300004: beardie_2
+    21300006: beardie_3
+    21300008: beardie_4
+    21300010: beardie_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,15 +35,15 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 2
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +54,67 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: beardie_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 377
+        width: 123
+        height: 192
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beardie_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 380
+        width: 119
+        height: 193
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beardie_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 380
+        width: 116
+        height: 196
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beardie_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 159
+        width: 129
+        height: 197
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beardie_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 154
+        width: 126
+        height: 196
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beardie_5
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 353
+        width: 127
+        height: 229
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

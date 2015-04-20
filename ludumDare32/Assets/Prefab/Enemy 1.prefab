@@ -129,7 +129,8 @@ MonoBehaviour:
   - 0
   SleepAnimations:
   - {fileID: 21300004, guid: 6aef1f46fbfbe514f8acaee0fb99e60b, type: 3}
-  SleepTimes: []
+  SleepTimes:
+  - 0
   SleepLimit: 1.00000003e+16
   bullets:
   - {fileID: 21300000, guid: b159fbe306038b14e9bb503095b349b2, type: 3}
