@@ -13,8 +13,8 @@ public class Bonus : MonoBehaviour {
 	
 	}
 
-    void bonus()
+    public void bonus()
     {
-        Application.LoadLevel("");
+        Application.LoadLevel("Nforest2");
     }
 }

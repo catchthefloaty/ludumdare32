@@ -7,7 +7,7 @@ public class levelManager : MonoBehaviour {
     public string nextlevel;
     public int enemycount;
     SpriteRenderer black;
-    List<string> bonuslevels;
+    List<string> bonuslevels = new List<string>();
     bool done = false;
     static int bonuscount = -1;
     public bool notbonus = false;
@@ -15,6 +15,8 @@ public class levelManager : MonoBehaviour {
 	void Start () {
         black = GameObject.FindGameObjectWithTag("black").GetComponent<SpriteRenderer>();
         enemycount = GameObject.FindGameObjectsWithTag("Enemy").GetLength(0);
+        bonuslevels.Add("Nforest3");
+        bonuslevels.Add("Nforest2");
 	}
 	
 	// Update is called once per frame
@@ -41,7 +43,7 @@ public class levelManager : MonoBehaviour {
             {
                 Application.LoadLevel(nextlevel);
             }
-            else if(bonuscount <= bonuslevels.Count)
+            else if(bonuscount < bonuslevels.Count)
             {
                 Application.LoadLevel(bonuslevels[bonuscount]);
             }
