@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - level
   - black
+  - bullet
   layers:
   - Default
   - TransparentFX

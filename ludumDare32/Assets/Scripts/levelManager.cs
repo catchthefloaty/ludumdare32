@@ -19,7 +19,9 @@ public class levelManager : MonoBehaviour {
         if (enemycount == 0)
         {
             done = true;
-
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("bullet")){
+                Destroy(g);
+            }
             //Application.LoadLevel(nextlevel);
         }
         if (done)
