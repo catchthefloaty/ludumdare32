@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42cea33a0ed3e145b700c50b1a99a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextlevel: 
+  nextlevel: cliff1
   enemycount: 0
 --- !u!4 &1821356070
 Transform:

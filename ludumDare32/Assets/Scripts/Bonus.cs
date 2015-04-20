@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Menu : MonoBehaviour {
+public class Bonus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,8 @@ public class Menu : MonoBehaviour {
 	
 	}
 
-    public void start()
+    void bonus()
     {
-        Application.LoadLevel("forest1");
+        Application.LoadLevel("");
     }
 }
